@@ -151,7 +151,7 @@ class _AddPrescriptionScreenState extends State<AddPrescriptionScreen> {
                 ),
               DropdownButtonFormField<String>(
                 key: ValueKey(_patients.length),
-                value: _patientId,
+                initialValue: _patientId,
                 items: _patients
                     .map(
                       (p) => DropdownMenuItem(

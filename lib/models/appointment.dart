@@ -22,6 +22,8 @@ class Appointment {
   final Patient? patient;
 
   bool get isCompleted => status == 'completed';
+  bool get isPending => status != 'completed';
+  String get statusDisplay => isCompleted ? 'done' : 'not done';
 
   factory Appointment.fromJson(Map<String, dynamic> json) {
     Patient? patient;

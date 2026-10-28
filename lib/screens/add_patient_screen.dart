@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../core/api_exception.dart';
+import '../core/indian_phone.dart';
 import '../models/patient.dart';
 import '../services/patient_service.dart';
 
@@ -123,8 +124,7 @@ class _AddPatientScreenState extends State<AddPatientScreen> {
                 controller: _phone,
                 keyboardType: TextInputType.phone,
                 decoration: const InputDecoration(labelText: 'Phone'),
-                validator: (v) =>
-                    (v == null || v.trim().isEmpty) ? 'Required' : null,
+                validator: indianMobileValidator,
               ),
               const SizedBox(height: 12),
               TextFormField(

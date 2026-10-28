@@ -14,6 +14,11 @@ class AppointmentService {
     );
   }
 
+  Future<List<Appointment>> pending() {
+    final today = DateTime.now().toIso8601String().substring(0, 10);
+    return daily(today);
+  }
+
   Future<List<Appointment>> search(String query) {
     return _api.get(
       '/appointments/search',
